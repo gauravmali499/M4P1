@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create a Dictionary to store product information
+        Dictionary<string, double> productPrices = new Dictionary<string, double>();
+
+        // Add product information to the dictionary
+        productPrices["Laptop"] = 1000.00;
+        productPrices["Smartphone"] = 500.00;
+        productPrices["Tablet"] = 300.00;
+        productPrices["Headphones"] = 50.00;
+
+        // Search for a product by name
+        Console.Write("Enter the product name to search: ");
+        string productName = Console.ReadLine();
+
+        // Check if the product exists in the dictionary
+        if (productPrices.ContainsKey(productName))
+        {
+            // If the product exists, display its price
+            Console.WriteLine($"The price of {productName} is {productPrices[productName]:C}");
+        }
+        else
+        {
+            // If the product doesn't exist, display a message
+            Console.WriteLine($"Product '{productName}' not found.");
+        }
+    }
+}
